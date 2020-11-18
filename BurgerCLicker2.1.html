@@ -1,0 +1,143 @@
+<script>
+
+function update(){
+document.getElementById('text').value = burgerclicks;
+document.title = burgerclicks + " burgers";
+document.getElementById('text1').value = burgermoney;
+document.getElementById('amauntautoClicker').innerHTML = "You own " + autoClick + " AutoClickers";
+document.getElementById('costautoClicker').innerHTML = 'for '+((autoClick+1) * 21) + " BurgersMoney";
+document.getElementById('costimproveClicker').innerHTML = 'for '+((improveclicks+1) * 12) + " BurgersMoney";
+document.getElementById('amauntimproveClicker').innerHTML = 'Your click counts ' + (improveclicks + 1);
+document.getElementById('burgersPerSecond').innerHTML = 'You are gaining ' + autoClick + ' Burgers per second'
+}
+var burgerclicks = 0;
+var burgermoney = 0;
+var autoClick = 0;
+var improveclicks = 0;
+
+function timer(){
+burgerclicks = burgerclicks + autoClick;
+burgermoney = burgermoney + autoClick;
+update()
+}
+setInterval(timer, 1000)
+
+</script>
+<html>
+    <head><title>BurgerClicker</title></head>
+        <style>
+        body {
+		background-color: green;
+        
+	
+
+    </style>
+	
+	<body>
+ <div style='position: absolute; left:7px; top: -10px;'>
+	  <p><font color="black">Fast Food Restaurant:</front></p>
+	   
+	  </div>
+	 
+	<div style='position: absolute; left:152px; top: 6px;'>
+	<form name="myForm"
+onsubmit="return validateForm()" method="post">
+<input type="text" name="fname">
+</form>
+</form>
+
+	  </div>
+	
+	   <a href=# onclick="add()" ><img src="hamburger.png"></a> 
+        <div style='position: absolute; left:237px; top: 65px;'>
+     
+		 <button><a href='#' onClick="buyimproveClicker()"><img src="cursor1.png" /></a></button>
+	  </div>
+	   <script>
+	   function buyimproveClicker() {
+          if (burgermoney >= ((improveclicks+1) * 12)) {
+            burgermoney = burgermoney - ((improveclicks+1) * 12);
+            improveclicks = improveclicks + 1;
+            update()
+        }
+		}
+
+	   
+	   </script>
+	    <button><a href='#' onClick="buyautoClicker()"><img src="autoclickercursor.png" width="75" height="75"></a></button>
+	 <div style='position: absolute; left:335px; top: 175px;'>
+     <b>Buy one Auto Clicker</b>
+	  </div>
+	 <div style='position: absolute; left:335px; top: 195px;'>
+	   <b id='costautoClicker'>for 21 BurgersMoney</b>
+	  </div>
+		 <div style='position: absolute; left:335px; top: 100px;'>
+     <b>Improve your Click Cursor</b>
+	  </div>
+	 <div style='position: absolute; left:335px; top: 120px;'>
+	   <b id='costimproveClicker'>for 12 BurgersMoney</b>
+	  </div>
+	 
+	  
+	   
+	   <script>
+	   function buyautoClicker() {
+          if (burgermoney >= ((autoClick+1) * 21)) {
+            burgermoney = burgermoney - ((autoClick+1) * 21);
+            autoClick = autoClick + 1;
+            update()
+        }
+		}
+
+	   
+	   </script>
+	   <br>
+        <input type="text" id="text" disabled style= text-align:center>
+               <script type="text/javascript">
+        function add() {
+        burgerclicks = burgerclicks + (improveclicks + 1)
+		burgermoney = burgermoney + (improveclicks + 1)
+		update()
+                 
+                   }          
+        </script>
+        BurgersClicks
+      	   <br>
+
+        <input type="text1" id="text1" disabled style= text-align:center>
+             
+        BurgersMoney
+      <br>
+	   <p id='amauntimproveClicker'>Your click counts 1</p>
+	    <p id='amauntautoClicker'>You own 0 AutoClickers</p>
+	  <p id='burgersPerSecond'>You are gaining 0 Burgers per second</p>
+   	 <div style='position: absolute; left:390px; top: 325px;'>
+	    <a><img src="The real yellow-Fish Company...png"  alt="The Yellow-Fish Company" style="width:125px;height:57px;"></a>
+	  </div>
+	 <div style='position: absolute; left:390px; top: 275px;'>
+		<button onclick="changeRandom()">Background Color:</button>
+	  </div>
+	 <b id='RestaurantName'></b>
+	  		<script>
+function changeRandom() {
+var RandomBackground = Math.floor(Math.random() * 2);;
+if(RandomBackground === 1) {
+	document.body.style.backgroundColor = "Yellow"}
+	if(RandomBackground === 0) {
+	document.body.style.backgroundColor = "Green"}
+}
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "Yellow-Fish")
+	{
+        alert("Yellow-Fish!");
+ ;
+    }
+}
+
+
+
+	 </script>
+    </body>
+	
+</html>
